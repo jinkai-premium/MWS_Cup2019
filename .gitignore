@@ -1,0 +1,11 @@
+**/*.evtx
+**/*.csv
+**/*.xlsx
+**/*.l2t
+**/*.sqlite
+**/*.png
+**/*.svg
+**/*.diag
+**/*.uml
+**/*.zip
+**/__pycache__
