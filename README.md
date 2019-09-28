@@ -1,15 +1,27 @@
-# hit-parser
+# README
 
-## Query
+## dependency
+linux/macOS/WSL
 
-### Remote-Logon
+## require
+- Python: >=3.6.5
+- docker: latest
+- docker-compose: latest
+
+## run
 ```
-GET _search
-{
-  "query": {
-    "match": {
-      "body.Event.EventData.Data.LogonType.keyword": "10"
-    }
-  }
-}
+$ git clone https://github.com/jinkai-premium/MWS_Cup2019
+$ cd MWS_Cup2019
+
+$ sh scripts/docker_elk.sh
+
+$ python -m .venv venv
+$ source .venv/bin/activate
+$ pip install -r requirements.txt
+
+$ python scripts/indices_evtxfiles.py {/path/to/your/evtx/directory}
+```
+
+```
+$ python src/run.py
 ```

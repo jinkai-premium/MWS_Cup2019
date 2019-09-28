@@ -1,0 +1,5 @@
+# coding: utf-8
+from typing import List, Union
+from models.EventLog import EventLog, EventLog_Logon, EventLog_Logoff
+
+EventLogs = List[Union[EventLog, EventLog_Logon, EventLog_Logoff]]
