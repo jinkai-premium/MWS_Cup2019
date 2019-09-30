@@ -1,0 +1,15 @@
+version: '3'
+services:
+  elasticsearch:
+    image: elasticsearch:7.2.0
+    ports:
+        - 9200:9200
+    environment:
+      - discovery.type=single-node
+
+  kibana:
+    image: kibana:7.2.0
+    ports:
+        - 5601:5601
+    environment:
+      - elasticsearch.host="http://localhost:9200"

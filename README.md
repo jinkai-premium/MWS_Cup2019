@@ -29,26 +29,34 @@ Therefore, this tool supports the damage investigation of cyber-attacks based on
 2. The function for displaying the timeline of filtering result
 
 
-## Requirement
+## Requirements
 - Linux / macOS / WSL
-- Python 3.6.5+
-- Docker latest
-- Docker-compose latest 
+- Python: 3.6.5+
+- Docker: latest
+- Docker-compose: latest 
 
 
-## Install
-```
-$ pip install https://github.com/jinkai-premium/MWS_Cup2019
+## Installation
+### via pip(Recommended)
+```bash
+$ pip install git+https://github.com/jinkai-premium/MWS_Cup2019
 
-# IMPORTANT: bulk-indice your evtx files to elasticsearch(default: localhost:9200)
+# IMPORTANT: Bulk-indice your evtx files to elasticsearch(default: localhost:9200).
+#            In each run after the first, you should not be add `--input` option(it does not indices from evtx files).
 $ mwscup2019_jinkai-premium --input="/path/to/your/evtx/directory"
+
+# Other options:
+#   --output: output filepath(default: dist/out.uml, dist/out.png)
+#   --nopng : not to generate png image(use when `docker` doesn't work environment.)
 ```
 
-```
+### manually install
+```bash
 $ git clone https://github.com/jinkai-premium/MWS_Cup2019
 $ cd MWS_Cup2019
 
 $ sh scripts/docker_elk.sh
+# or run `docker-compose up` on /src/scripts/
 
 $ python -m .venv venv
 $ source .venv/bin/activate
@@ -59,16 +67,16 @@ $ python scripts/indices_evtxfiles.py {/path/to/your/evtx/directory}
 
 
 ## Usage
+### via pip(Recommended)
+```bash
+$ mwscup2019_jinkai-premium
 ```
+
+### manually install
+```bash
 $ python src/run.py
 ```
 
 
 ## License
 [MIT](https://github.com/jinkai-premium/MWS_Cup2019/blob/master/LICENSE)
-
-
-
-
-
-
