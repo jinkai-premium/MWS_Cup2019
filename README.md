@@ -36,7 +36,6 @@ Therefore, this tool supports the damage investigation of cyber-attacks based on
 - Docker-compose: latest 
 
 
-<<<<<<< HEAD
 ## Installation
 ### via pip(Recommended)
 ```bash
@@ -45,12 +44,6 @@ $ pip install git+https://github.com/jinkai-premium/MWS_Cup2019
 # IMPORTANT: Bulk-indice your evtx files to elasticsearch(default: localhost:9200).
 #            In each run after the first, you should not be add `--input` option(it does not indices from evtx files).
 $ mwscup2019_jinkai-premium --input="/path/to/your/evtx/directory"
-=======
-## Install
-```
-$ pip install https://github.com/jinkai-premium/MWS_Cup2019
-```
->>>>>>> 1eeba812983236ac95a5c2163ae91d5a63ea90f4
 
 # Other options:
 #   --output: output filepath(default: dist/out.uml, dist/out.png)
@@ -78,17 +71,9 @@ $ python scripts/indices_evtxfiles.py {/path/to/your/evtx/directory}
 ```bash
 $ mwscup2019_jinkai-premium
 ```
-<<<<<<< HEAD
 
 ### manually install
 ```bash
-=======
-# IMPORTANT: bulk-indice your evtx files to elasticsearch(default: localhost:9200)
-$ mwscup2019_jinkai-premium --input="/path/to/your/evtx/directory"
-```
-
-```
->>>>>>> 1eeba812983236ac95a5c2163ae91d5a63ea90f4
 $ python src/run.py
 ```
 
