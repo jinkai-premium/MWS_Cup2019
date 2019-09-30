@@ -39,9 +39,6 @@ Therefore, this tool supports the damage investigation of cyber-attacks based on
 ## Install
 ```
 $ pip install https://github.com/jinkai-premium/MWS_Cup2019
-
-# IMPORTANT: bulk-indice your evtx files to elasticsearch(default: localhost:9200)
-$ mwscup2019_jinkai-premium --input="/path/to/your/evtx/directory"
 ```
 
 ```
@@ -59,6 +56,11 @@ $ python scripts/indices_evtxfiles.py {/path/to/your/evtx/directory}
 
 
 ## Usage
+```
+# IMPORTANT: bulk-indice your evtx files to elasticsearch(default: localhost:9200)
+$ mwscup2019_jinkai-premium --input="/path/to/your/evtx/directory"
+```
+
 ```
 $ python src/run.py
 ```
