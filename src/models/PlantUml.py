@@ -4,8 +4,8 @@ from subprocess import check_output
 from pathlib import Path, PosixPath
 from functools import singledispatch
 
-from models.EventLog import EventLog_Logon, EventLog_Logoff, EventLog_DetectMalware
-from models.Types import EventLogs
+from src.models.EventLog import EventLog_Logon, EventLog_Logoff, EventLog_DetectMalware
+from src.models.Types import EventLogs
 
 
 class PlantUml(object):
@@ -24,7 +24,7 @@ class PlantUml(object):
     def sort_logs(self, logs: EventLogs) -> EventLogs:
         return sorted(logs, key=lambda log: log.timestamp)
 
-    def write_file(self, logs: EventLogs) -> None:
+    def write_file(self, logs: EventLogs, nopng: bool) -> None:
         logs = self.sort_logs(logs)
 
         date = ''
@@ -53,7 +53,9 @@ class PlantUml(object):
 
         text = '\n'.join(text_logs)
         Path(self.path.with_suffix('.uml')).write_text(self.header + server_names + text + self.footer)
-        check_output(f"cat {self.path.with_suffix('.uml')} | docker run --rm -i think/plantuml -tpng > {self.path.with_suffix('.png')} ", shell=True)
+
+        if not nopng:
+            check_output(f"cat {self.path.with_suffix('.uml')} | docker run --rm -i think/plantuml -tpng > {self.path.with_suffix('.png')} ", shell=True)
 
     def get_date(self, timestamp: str) -> str:
         return timestamp.split(' ')[0]

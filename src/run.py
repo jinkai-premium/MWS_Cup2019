@@ -2,11 +2,11 @@
 from typing import List
 from pathlib import Path
 
-from models.Config import Config
-from models.Types import EventLogs
-from models.PlantUml import PlantUml
-from models.ElasticSearchController import ElasticSearchController
-from models.EventLog import EventLog_Logon, EventLog_Logoff, EventLog_DetectMalware
+from src.models.Config import Config
+from src.models.Types import EventLogs
+from src.models.PlantUml import PlantUml
+from src.models.ElasticSearchController import ElasticSearchController
+from src.models.EventLog import EventLog_Logon, EventLog_Logoff, EventLog_DetectMalware
 
 
 def main():
@@ -37,7 +37,7 @@ def main():
     filename = input(f"Enter Output FilePath(default = {config.DEFAULT_OUTPUT_DIR}/output) > ")
     filename = filename if filename != '' else f"{config.DEFAULT_OUTPUT_DIR}/output"
 
-    PlantUml(Path(filename)).write_file(logs)
+    PlantUml(Path(filename)).write_file(logs, False)
 
 
 if __name__ == '__main__':

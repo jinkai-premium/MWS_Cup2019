@@ -1,8 +1,5 @@
 # README
 
-## demo
-![](https://i.gyazo.com/580e35e2c0ca236a4a96941ab476970d.png)
-
 ## dependency
 linux/macOS/WSL
 
@@ -10,6 +7,14 @@ linux/macOS/WSL
 - Python: >=3.6.5
 - docker: latest
 - docker-compose: latest
+
+## console-run(recommended)
+```
+$ pip install https://github.com/jinkai-premium/MWS_Cup2019
+
+# IMPORTANT: bulk-indice your evtx files to elasticsearch(default: localhost:9200)
+$ mwscup2019_jinkai-premium --input="/path/to/your/evtx/directory"
+```
 
 ## run
 ```

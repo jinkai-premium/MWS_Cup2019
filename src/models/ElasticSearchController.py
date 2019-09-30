@@ -3,7 +3,7 @@ from typing import List
 
 from elasticsearch import Elasticsearch
 
-from models.Config import Config
+from src.models.Config import Config
 
 
 class ElasticSearchController(object):
